@@ -8,8 +8,13 @@ $nodejs$python$kubernetes$battery$cmd_duration\
 $line_break$character
 """
 
+command_timeout = 1000
+
 [fill]
 symbol = ' '
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [[battery.display]]
 threshold = 50
