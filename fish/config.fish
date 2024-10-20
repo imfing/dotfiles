@@ -31,6 +31,14 @@ if type -q zoxide
     zoxide init fish | source
 end
 
+# fzf - fuzzy finder
+# https://github.com/junegunn/fzf
+if type -q fzf
+    fzf --fish | source
+    set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+    set -x FZF_CTRL_T_OPTS '--walker-skip .git,node_modules,target --preview "bat -n --color=always {}" --bind "ctrl-/:change-preview-window(down|hidden|)"'
+end
+
 # https://starship.rs/
 if type -q starship
     starship init fish | source
