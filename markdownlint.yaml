@@ -1,0 +1,13 @@
+# https://github.com/DavidAnson/markdownlint/blob/v0.32.1/schema/.markdownlint.yaml
+
+# MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md012.md
+MD012: false
+
+# MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md013.md
+MD013: false
+
+# MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md034.md
+MD034: false
+
+# MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md041.md
+MD041: false

@@ -1,0 +1,20 @@
+theme = Snazzy
+shell-integration = fish
+
+# window
+background-opacity = 0.95
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+window-padding-balance = true
+window-save-state = always
+
+# keybind
+#keybind = ctrl+h=goto_split:left
+#keybind = ctrl+j=goto_split:bottom
+#keybind = ctrl+k=goto_split:top
+#keybind = ctrl+l=goto_split:right
+
+keybind = cmd+h=previous_tab
+keybind = cmd+l=next_tab
+
+keybind = global:cmd+opt+g=toggle_quick_terminal
