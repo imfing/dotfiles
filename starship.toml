@@ -1,24 +1,10 @@
 # ~/.config/starship.toml
 # https://starship.rs/config/
 
-format = """
-$all\
-$fill\
-$nodejs$python$kubernetes$battery$cmd_duration\
-$line_break$character
-"""
-
 command_timeout = 1000
-
-[fill]
-symbol = ' '
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [[battery.display]]
-threshold = 50
-
-[kubernetes]
-disabled = false
-# format = 'in [☸️  $context( \($namespace\))]($style) '
+threshold = 40

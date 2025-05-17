@@ -1,12 +1,6 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 set -U fish_greeting # disable greeting
-# set -U fish_key_bindings fish_vi_key_bindings
 
-# Homebrew
-fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/bin  # Homebrew
 
 # Rust
 fish_add_path $HOME/.cargo/bin
@@ -20,19 +14,10 @@ end
 # Local tools
 fish_add_path $HOME/.local/bin
 
-# iTerm2 shell integration
-if test -e $HOME/.iterm2_shell_integration.fish
-    source $HOME/.iterm2_shell_integration.fish
-end
+# zoxide - smarter cd command https://github.com/ajeetdsouza/zoxide
+type -q zoxide; and zoxide init fish | source
 
-# zoxide - smarter cd command
-# https://github.com/ajeetdsouza/zoxide
-if type -q zoxide
-    zoxide init fish | source
-end
-
-# fzf - fuzzy finder
-# https://github.com/junegunn/fzf
+# fzf - https://github.com/junegunn/fzf
 if type -q fzf
     fzf --fish | source
     set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
@@ -40,24 +25,19 @@ if type -q fzf
 end
 
 # https://starship.rs/
-if type -q starship
-    starship init fish | source
-end
+type -q starship; and starship init fish | source
 
-# Aliases
-alias c="clear"
+# zellij - mordern terminal multiplexers
+# https://github.com/zellij-org/zellij 
+type -q zellij; and alias zj="zellij"
+
+# lazygit
+type -q lazygit; and alias lg="lazygit"
 
 # eza - modern alternative to ls
 # https://github.com/eza-community/eza
-if command -q eza
+if type -q eza
     alias ls="eza"
     alias ll="eza --long --git --git-repos-no-status --header --icons"
     alias tree='eza -lh --git --time-style long-iso --tree --all --icons auto'
 end
-
-# pnpm
-set -gx PNPM_HOME $HOME/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
