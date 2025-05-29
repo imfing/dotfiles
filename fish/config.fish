@@ -41,3 +41,10 @@ if type -q eza
     alias ll="eza --long --git --git-repos-no-status --header --icons"
     alias tree='eza -lh --git --time-style long-iso --tree --all --icons auto'
 end
+
+# cursor
+if type -q cursor
+    alias c="cursor ."
+end
+
+# add other aliases here
