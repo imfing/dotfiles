@@ -6,5 +6,9 @@ command_timeout = 1000
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
+[hostname]
+ssh_only = false
+disabled = true
+
 [[battery.display]]
 threshold = 40
