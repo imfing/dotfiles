@@ -1,9 +1,14 @@
 set -U fish_greeting # disable greeting
 
-fish_add_path /opt/homebrew/bin  # Homebrew
+fish_add_path /opt/homebrew/bin # Homebrew
+
+# Local tools
+fish_add_path $HOME/.local/bin
 
 # Rust
-fish_add_path $HOME/.cargo/bin
+if type -q cargo
+    fish_add_path $HOME/.cargo/bin
+end
 
 # Go
 if type -q go
@@ -11,24 +16,24 @@ if type -q go
     set -x GOPATH (go env GOPATH)
 end
 
-# Local tools
-fish_add_path $HOME/.local/bin
-
 # zoxide - smarter cd command https://github.com/ajeetdsouza/zoxide
 type -q zoxide; and zoxide init fish | source
 
 # fzf - https://github.com/junegunn/fzf
-if type -q fzf
+if type -q fzf && type -q bat
     fzf --fish | source
     set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
     set -x FZF_CTRL_T_OPTS '--walker-skip .git,node_modules,target --preview "bat -n --color=always {}" --bind "ctrl-/:change-preview-window(down|hidden|)"'
+else if type -q fzf
+    fzf --fish | source
+    set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90%'
 end
 
 # https://starship.rs/
 type -q starship; and starship init fish | source
 
 # zellij - mordern terminal multiplexers
-# https://github.com/zellij-org/zellij 
+# https://github.com/zellij-org/zellij
 type -q zellij; and alias zj="zellij"
 
 # lazygit
@@ -47,4 +52,67 @@ if type -q cursor
     alias c="cursor ."
 end
 
+alias cl="clear"
+alias ll="ls -la"
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git pull"
+alias gwl="git worktree list"
+
 # add other aliases here
+alias cc="claude"
+alias cdx="codex -m gpt-5-codex --search -c model_reasoning_effort=high"
+
+if type -q gemini
+    function google
+        set sentence $argv[1]
+        if test -z "$sentence"
+            echo "Usage: google <sentence>"
+            return 1
+        end
+
+        gemini -m "gemini-2.5-flash" -p "Search google for <query>$sentence</query> and summarize the result"
+    end
+end
+
+function kimi-claude
+    set -x ANTHROPIC_AUTH_TOKEN (op read "op://Private/Moonshot AI/credential")
+    set -x ANTHROPIC_BASE_URL https://api.moonshot.ai/anthropic
+    claude $argv[1]
+end
+
+function deepseek
+    set -x ANTHROPIC_AUTH_TOKEN (op read "op://Private/DeepSeek API/credential")
+    set -x ANTHROPIC_BASE_URL https://api.deepseek.com/anthropic
+    claude $argv[1]
+end
+
+function claude-copilot
+    set -x ANTHROPIC_AUTH_TOKEN token
+    set -x ANTHROPIC_BASE_URL http://localhost:4141
+    set -x ANTHROPIC_MODEL claude-sonnet-4.5
+    set -x ANTHROPIC_DEFAULT_SONNET_MODEL claude-sonnet-4.5
+    set -x ANTHROPIC_DEFAULT_OPUS_MODEL claude-sonnet-4.5
+    set -x ANTHROPIC_DEFAULT_HAIKU_MODEL claude-haiku-4.5
+    claude $argv[1]
+end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/xinfu/.lmstudio/bin
+# End of LM Studio CLI section
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# Added by Antigravity
+fish_add_path /Users/xinfu/.antigravity/antigravity/bin
+
+# Amp CLI
+export PATH="/Users/xinfu/.amp/bin:$PATH"

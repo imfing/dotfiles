@@ -12,3 +12,6 @@ disabled = true
 
 [[battery.display]]
 threshold = 40
+
+[golang]
+symbol = " "

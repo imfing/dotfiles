@@ -1,9 +1,12 @@
-theme = Snazzy
+# theme = Builtin Pastel Dark
+theme = vesper
+
 shell-integration = fish
 
+font-family = "JetBrains Mono"
+font-family = "Source Han Sans"
+
 # window
-background-opacity = 0.95
-macos-titlebar-style = tabs
 mouse-hide-while-typing = true
 window-padding-balance = true
 window-save-state = always
@@ -17,7 +20,7 @@ window-save-state = always
 keybind = cmd+h=previous_tab
 keybind = cmd+l=next_tab
 
-keybind = global:cmd+opt+g=toggle_quick_terminal
+# keybind = global:cmd+opt+g=toggle_quick_terminal
 
 # navigation in zellij
 macos-option-as-alt = true
