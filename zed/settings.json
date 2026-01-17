@@ -1,0 +1,77 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // UI
+  "ui_font_family": ".ZedSans",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "JetBrains Mono",
+  "theme": {
+    "mode": "system",
+    "dark": "Vesper",
+    "light": "macOS Classic Light"
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 13
+  },
+  // Telemetry
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "git_panel": {
+    "tree_view": true,
+    "sort_by_path": true
+  },
+  "formatter": "language_server",
+  "base_keymap": "VSCode",
+  "format_on_save": "on",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5"
+    },
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    }
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "ty",
+        "!basedpyright",
+        "..."
+      ],
+      "format_on_save": "on",
+    }
+  }
+}

@@ -1,0 +1,149 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // Terminal
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock"
+    }
+  },
+  // Window's navigation
+  {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      // Window's motions
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // Pane
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseOtherItems",
+      // Git
+      "space g g": [
+        "task::Spawn",
+        {
+          "task_name": "lazygit",
+          "reveal_target": "center"
+        }
+      ],
+      // Markdown
+      "space m p": "markdown::OpenPreview",
+      "space m P": "markdown::OpenPreviewToTheSide",
+      // Tab things. Almost as good as harpoon.
+      "space 1": [
+        "pane::ActivateItem",
+        0
+      ],
+      "space 2": [
+        "pane::ActivateItem",
+        1
+      ],
+      "space 3": [
+        "pane::ActivateItem",
+        2
+      ],
+      "space 4": [
+        "pane::ActivateItem",
+        3
+      ],
+      "space 5": [
+        "pane::ActivateItem",
+        4
+      ],
+      "space 6": [
+        "pane::ActivateItem",
+        5
+      ],
+      "space 7": [
+        "pane::ActivateItem",
+        6
+      ],
+      "space 8": [
+        "pane::ActivateItem",
+        7
+      ],
+      "space 9": [
+        "pane::ActivateItem",
+        8
+      ],
+      "space 0": "pane::ActivateLastItem",
+      // Buffers
+      "space ,": "tab_switcher::Toggle",
+      "L": "pane::ActivateNextItem",
+      "H": "pane::ActivatePreviousItem",
+      // Search
+      "space /": "workspace::NewSearch",
+      // Git
+      "space g b": "git::Blame",
+      // LSP & Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space s d": "diagnostics::Deploy",
+      "space s s": "outline::Toggle",
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      // Format
+      "space c f": "editor::Format",
+      // File explorer
+      "space e": "workspace::ToggleLeftDock",
+      // Telescope
+      "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      // Terminal
+      "space t": "workspace::ToggleBottomDock",
+      // Windows management
+      "space -": "pane::SplitDown",
+      "space |": "pane::SplitRight",
+      "space w c": "pane::CloseAllItems",
+      // Refactoring
+      "space c r ": "editor::Rename",
+      // Chat with AI
+      "space a a": "agent::ToggleFocus",
+      "space a e": "assistant::InlineAssist",
+      // Keys
+      "space s k": "zed::OpenKeymap",
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": "vim::SwitchToNormalMode",
+      "j j": "vim::SwitchToNormalMode",
+      "ctrl-s": [
+        "vim::SwitchToNormalMode",
+        "workspace::Save",
+      ],
+    }
+  },
+  // Empty pane, set of keybindings that are available when there is no active editor
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Open file finder
+      "space space": "file_finder::Toggle",
+      // New file
+      "space f n": "workspace::NewFile",
+      // Open recent project
+      "space f p": "projects::OpenRecent",
+      // Quit zed
+      "space q q": "zed::Quit"
+    }
+  },
+]
