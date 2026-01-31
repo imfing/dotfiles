@@ -69,11 +69,13 @@ if type -q gemini
     function google
         set sentence $argv[1]
         if test -z "$sentence"
-            echo "Usage: google <sentence>"
+            read -P "Search: " sentence
+        end
+        if test -z "$sentence"
             return 1
         end
 
-        gemini -m "gemini-2.5-flash" -p "Search google for <query>$sentence</query> and summarize the result"
+        gemini -m gemini-3-flash-preview -p "Search google for <query>$sentence</query> and summarize the result. Format the output using ANSI escape codes for terminal display (bold, colors, etc). Do not use Markdown format." | while read -l line; printf '%b\n' $line; end
     end
 end
 
@@ -86,16 +88,6 @@ end
 function deepseek
     set -x ANTHROPIC_AUTH_TOKEN (op read "op://Private/DeepSeek API/credential")
     set -x ANTHROPIC_BASE_URL https://api.deepseek.com/anthropic
-    claude $argv[1]
-end
-
-function claude-copilot
-    set -x ANTHROPIC_AUTH_TOKEN token
-    set -x ANTHROPIC_BASE_URL http://localhost:4141
-    set -x ANTHROPIC_MODEL claude-sonnet-4.5
-    set -x ANTHROPIC_DEFAULT_SONNET_MODEL claude-sonnet-4.5
-    set -x ANTHROPIC_DEFAULT_OPUS_MODEL claude-sonnet-4.5
-    set -x ANTHROPIC_DEFAULT_HAIKU_MODEL claude-haiku-4.5
     claude $argv[1]
 end
 
@@ -113,6 +105,3 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # Added by Antigravity
 fish_add_path /Users/xinfu/.antigravity/antigravity/bin
-
-# Amp CLI
-export PATH="/Users/xinfu/.amp/bin:$PATH"

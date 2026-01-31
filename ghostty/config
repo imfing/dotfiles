@@ -1,8 +1,10 @@
 # theme = Builtin Pastel Dark
-theme = vesper
+# theme = vesper
+theme = GitHub Light High Contrast
 
 shell-integration = fish
 
+font-thicken = true
 font-family = "JetBrains Mono"
 font-family = "Source Han Sans"
 

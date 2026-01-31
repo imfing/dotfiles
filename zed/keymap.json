@@ -36,6 +36,7 @@
       // Pane
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseOtherItems",
+      "space b b": "pane::GoBack",
       // Git
       "space g g": [
         "task::Spawn",
@@ -99,6 +100,7 @@
       "space s s": "outline::Toggle",
       "g d": "editor::GoToDefinition",
       "g r": "editor::FindAllReferences",
+      "g v": "editor::GoToDefinitionSplit",
       // Format
       "space c f": "editor::Format",
       // File explorer
