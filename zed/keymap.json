@@ -33,6 +33,7 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
+      "ctrl-s": "workspace::Save",
       // Pane
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseOtherItems",
@@ -128,10 +129,6 @@
     "bindings": {
       "j k": "vim::SwitchToNormalMode",
       "j j": "vim::SwitchToNormalMode",
-      "ctrl-s": [
-        "vim::SwitchToNormalMode",
-        "workspace::Save",
-      ],
     }
   },
   // File panel
