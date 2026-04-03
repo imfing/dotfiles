@@ -5,7 +5,11 @@ theme = GitHub Light High Contrast
 shell-integration = fish
 
 font-thicken = true
-font-family = "JetBrains Mono"
+font-size = 14
+
+font-family = "Berkeley Mono"
+
+# CJK Fallbacks
 font-family = "Source Han Sans"
 
 # window

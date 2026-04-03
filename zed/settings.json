@@ -1,6 +1,15 @@
 // Zed settings
 {
   // UI
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "git": {
+    "path_style": "file_name_first"
+  },
+  "edit_predictions": {
+    "provider": "none"
+  },
   "ui_font_family": ".ZedSans",
   "ui_font_size": 14.0,
   "buffer_font_size": 13.0,
@@ -40,11 +49,8 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-sonnet-4.6"
     }
-  },
-  "features": {
-    "edit_prediction_provider": "none"
   },
   "collaboration_panel": {
     "button": false

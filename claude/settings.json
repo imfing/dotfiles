@@ -1,10 +1,12 @@
 {
+  "env": {
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
-  "hooks": {},
-  "enabledPlugins": {},
   "permissions": {
     "allow": [
       "Bash(git status *)",
@@ -31,8 +33,23 @@
       "Read(**/.env.*)"
     ]
   },
-  "env": {
-    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
-  }
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "obsidian@obsidian-skills": true,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true
 }

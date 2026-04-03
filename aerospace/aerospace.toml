@@ -46,7 +46,8 @@ automatically-unhide-macos-hidden-apps = false
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
-                         "C", "D", "E"]
+                         "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
+                         "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -67,12 +68,12 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       5
-    outer.bottom =     5
-    outer.top =        5
-    outer.right =      5
+    inner.horizontal = 20
+    inner.vertical =   20
+    outer.left =       10
+    outer.bottom =     10
+    outer.top =        10
+    outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -240,4 +241,84 @@ on-mode-changed = []
 
 [[on-window-detected]]
     if.app-name-regex-substring = 'Wispr Flow'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.spotify.client'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Preview'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.news'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.stocks'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.weather'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Maps'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.calculator'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.reminders'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.AppStore'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Home'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.podcasts'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.TV'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Music'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.freeform'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.VoiceMemos'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.PhotoBooth'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.FaceTime'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iBooksX'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
     run = 'layout floating'
