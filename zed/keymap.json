@@ -37,7 +37,6 @@
       // Pane
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseOtherItems",
-      "space b b": "pane::GoBack",
       // Git
       "space g g": [
         "task::Spawn",

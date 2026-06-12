@@ -1,5 +1,4 @@
 # theme = Builtin Pastel Dark
-# theme = vesper
 theme = GitHub Light High Contrast
 
 shell-integration = fish
@@ -10,6 +9,7 @@ font-size = 14
 font-family = "Berkeley Mono"
 
 # CJK Fallbacks
+font-family = "PingFang SC"
 font-family = "Source Han Sans"
 
 # window

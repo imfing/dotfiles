@@ -1,6 +1,14 @@
 // Zed settings
 {
   // UI
+  "agent_servers": {},
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
   "session": {
     "trust_all_worktrees": true
   },
@@ -13,7 +21,7 @@
   "ui_font_family": ".ZedSans",
   "ui_font_size": 14.0,
   "buffer_font_size": 13.0,
-  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_family": "Berkeley Mono",
   "theme": {
     "mode": "light",
     "dark": "Vesper",
@@ -26,7 +34,7 @@
   },
   "terminal": {
     "copy_on_select": true,
-    "font_family": "JetBrainsMono Nerd Font",
+    "font_family": "BerkeleyMono Nerd Font Mono",
     "font_size": 13
   },
   // Telemetry
@@ -39,6 +47,7 @@
     "git_status": true
   },
   "git_panel": {
+    "dock": "right",
     "tree_view": true,
     "sort_by_path": true
   },
@@ -46,10 +55,12 @@
   "base_keymap": "VSCode",
   "format_on_save": "on",
   "agent": {
+    "dock": "left",
     "default_profile": "write",
     "default_model": {
+      "effort": "high",
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6"
+      "model": "gpt-5-mini"
     }
   },
   "collaboration_panel": {

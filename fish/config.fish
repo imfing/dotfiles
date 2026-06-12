@@ -39,6 +39,10 @@ type -q zellij; and alias zj="zellij"
 # lazygit
 type -q lazygit; and alias lg="lazygit"
 
+# vivid - generates LS_COLORS, used by fd / eza / GNU ls / tree
+# https://github.com/sharkdp/vivid
+type -q vivid; and set -gx LS_COLORS (vivid generate ansi)
+
 # eza - modern alternative to ls
 # https://github.com/eza-community/eza
 if type -q eza
@@ -58,22 +62,12 @@ alias gc="git commit -m"
 alias gp="git pull"
 alias gwl="git worktree list"
 
-# AI
-
-# cursor
-if type -q cursor
-    alias c="cursor ."
-end
-
 # Obsidian
 fish_add_path /Applications/Obsidian.app/Contents/MacOS
 
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH ~/.lmstudio/bin
 # End of LM Studio CLI section
-
-# Added by Antigravity
-fish_add_path ~/.antigravity/antigravity/bin
 
 # Vite+ bin (https://viteplus.dev)
 source "$HOME/.vite-plus/env.fish"
