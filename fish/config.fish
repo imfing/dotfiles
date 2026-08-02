@@ -64,10 +64,3 @@ alias gwl="git worktree list"
 
 # Obsidian
 fish_add_path /Applications/Obsidian.app/Contents/MacOS
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH ~/.lmstudio/bin
-# End of LM Studio CLI section
-
-# Vite+ bin (https://viteplus.dev)
-source "$HOME/.vite-plus/env.fish"

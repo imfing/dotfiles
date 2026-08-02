@@ -1,0 +1,47 @@
+onboarding = false
+
+[ui.sound]
+enabled = false
+
+[theme]
+name = "one-light"
+
+[ui.toast]
+delivery = "herdr"
+
+[experimental]
+pane_history = false
+
+[keys]
+prefix = "\\"
+
+detach = "prefix+d"
+
+split_vertical = "prefix+|"
+split_horizontal = "prefix+-"
+
+rename_tab = "prefix+,"
+previous_tab = "alt+left"
+next_tab = "alt+right"
+
+previous_workspace = "alt+up"
+next_workspace = "alt+down"
+
+[ui]
+agent_panel_sort = "spaces"
+
+[[keys.command]]
+key = "prefix+alt+g"
+type = "popup"
+command = "lazygit"
+description = "run lazygit"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
